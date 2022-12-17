@@ -1,0 +1,78 @@
+/*_______________navbar_______________*/
+
+.main__navbar {
+  height: 100px;
+  background-color: #fff;
+  box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.main__addIcon {
+  height: 5rem;
+  width: 5rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  border-radius: 15%;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 5px 0px,
+    rgb(231, 223, 223) 0px 1px 1px 0px;
+}
+
+.main__addIcon:focus {
+  box-shadow: rgba(249, 249, 249, 0.99) 0px 2px 50px 0px,
+    rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+}
+
+/*_______________card_row_______________*/
+
+.main__cards {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+/*_______________style_for_card_______________*/
+.main__card {
+  position: relative;
+  margin: 40px auto;
+  width: 200px;
+  height: 150px;
+  background: #fffdd0;
+  border-radius: 2px;
+  align-items: flex-end;
+}
+
+.main__card::before,
+.main__card::after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  width: 40%;
+  height: 10px;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.7);
+  z-index: -1;
+  transition: all 0.3s ease-in-out;
+}
+
+.main__card::before {
+  left: 15px;
+  transform: skew(-5deg) rotate(-5deg);
+}
+
+.main__card::after {
+  right: 15px;
+  transform: skew(5deg) rotate(5deg);
+}
+
+.main__card:hover::before,
+.main__card:hover::after {
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.4);
+}
+
+.main__card:hover::before {
+  left: 5px;
+}
+
+.main__card:hover::after {
+  right: 5px;
+}
+/*_____________________________________________*/

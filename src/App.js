@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Main from './components/Main';
+import Popups from './components/Popups';
 
 function App() {
+  const [cards, setCards] = useState([]);
+  const [isPopusOpen, setIsPopusOpen] = useState(false);
+
+  const onCancel = () => setIsPopusOpen(false);
+  console.log();
+  const handleAddNote = (title, text) =>
+    setCards((card) => [...card, { title: title, text: text }], onCancel());
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Main onclick={() => setIsPopusOpen(true)} cards={cards} />
+      <Popups
+        open={isPopusOpen}
+        onCancle={onCancel}
+        handleAddNote={handleAddNote}
+      />
     </div>
   );
 }
