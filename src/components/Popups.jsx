@@ -27,7 +27,7 @@ function Popups({ open, onCancle, handleAddNote }) {
         </div>
         <div className={style.popups__input}>
           <p>
-            <input
+            <textarea
               placeholder="note"
               type="text"
               className={style.popups__body}
