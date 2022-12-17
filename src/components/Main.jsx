@@ -15,8 +15,8 @@ function Main({ onclick, cards }) {
                 <div className={style.card__title}>
                   <h4>{card.title}</h4>
                 </div>
-                <div className={style.card__time}>
-                  <p>{card.text}</p>
+                <div className={style.card__body}>
+                  <p className={style.card__body}>{card.text}</p>
                 </div>
               </div>
             );
