@@ -2,6 +2,8 @@ import style from './Popups.module.css';
 import { useState } from 'react';
 
 function Popups({ open, onCancle, handleAddNote }) {
+  const d = Date.now();
+  const addDate = `${new Date(d)}`;
   const [title, setTitle] = useState('');
   const [text, setText] = useState('');
 
@@ -25,6 +27,10 @@ function Popups({ open, onCancle, handleAddNote }) {
             />
           </h3>
         </div>
+        <div
+          className={style.popups__input}
+          dangerouslySetInnerHTML={{ __html: addDate }}
+        ></div>
         <div className={style.popups__input}>
           <p>
             <textarea
@@ -35,7 +41,10 @@ function Popups({ open, onCancle, handleAddNote }) {
             />
           </p>
         </div>
-        <button type="button" onClick={() => handleAddNote(title, text)}>
+        <button
+          type="button"
+          onClick={() => handleAddNote(title, text, addDate)}
+        >
           submit
         </button>
         <button type="button" onClick={onCancle}>

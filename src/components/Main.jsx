@@ -18,6 +18,7 @@ function Main({ onclick, cards }) {
                 <div className={style.card__body}>
                   <p className={style.card__body}>{card.text}</p>
                 </div>
+                <div className={style.card__time}>{card.time}</div>
               </div>
             );
           })}

@@ -9,8 +9,11 @@ function App() {
 
   const onCancel = () => setIsPopusOpen(false);
   console.log();
-  const handleAddNote = (title, text) =>
-    setCards((card) => [...card, { title: title, text: text }], onCancel());
+  const handleAddNote = (title, text, time) =>
+    setCards(
+      (card) => [...card, { title: title, text: text, time: time }],
+      onCancel()
+    );
 
   return (
     <div className="App">
