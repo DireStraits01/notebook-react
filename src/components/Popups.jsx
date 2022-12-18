@@ -1,7 +1,7 @@
 import style from './Popups.module.css';
 import { useState } from 'react';
 
-function Popups({ open, onCancle, handleAddNote }) {
+function Popups({ open, onCancle, addCard }) {
   const options = {
     weekday: 'long',
     year: 'numeric',
@@ -47,10 +47,7 @@ function Popups({ open, onCancle, handleAddNote }) {
             />
           </p>
         </div>
-        <button
-          type="button"
-          onClick={() => handleAddNote(title, text, addDate)}
-        >
+        <button type="button" onClick={() => addCard(title, text, addDate)}>
           submit
         </button>
         <button type="button" onClick={onCancle}>

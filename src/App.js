@@ -12,7 +12,7 @@ function App() {
     return cardId++;
   };
   const onCancel = () => setIsPopusOpen(false);
-  console.log();
+
   const handleAddNote = (title, text, time) =>
     setCards(
       (card) => [
@@ -23,14 +23,17 @@ function App() {
       console.log(cards)
     );
 
+  const handleRemoveCard = (cardForRemove) =>
+    setCards(cards.filter((card) => card.id !== cardForRemove.id));
+
   return (
     <div className="App">
-      <Main onclick={() => setIsPopusOpen(true)} cards={cards} />
-      <Popups
-        open={isPopusOpen}
-        onCancle={onCancel}
-        handleAddNote={handleAddNote}
+      <Main
+        onclick={() => setIsPopusOpen(true)}
+        cards={cards}
+        removeCard={handleRemoveCard}
       />
+      <Popups open={isPopusOpen} onCancle={onCancel} addCard={handleAddNote} />
     </div>
   );
 }

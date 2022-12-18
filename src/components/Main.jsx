@@ -1,6 +1,6 @@
 import style from './Main.module.css';
 import { TiDelete } from 'react-icons/ti';
-function Main({ onclick, cards }) {
+function Main({ onclick, cards, removeCard }) {
   return (
     <>
       <nav className={style.main__navbar}>
@@ -13,7 +13,10 @@ function Main({ onclick, cards }) {
             return (
               <div className={style.main__card} key={index}>
                 <div>
-                  <TiDelete className={style.main__card_deleteIcon} />
+                  <TiDelete
+                    className={style.main__card_deleteIcon}
+                    onClick={() => removeCard(card)}
+                  />
                 </div>
 
                 <div className={style.card__title}>
