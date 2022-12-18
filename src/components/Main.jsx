@@ -1,5 +1,5 @@
 import style from './Main.module.css';
-
+import { TiDelete } from 'react-icons/ti';
 function Main({ onclick, cards }) {
   return (
     <>
@@ -12,6 +12,10 @@ function Main({ onclick, cards }) {
           {cards.map((card, index) => {
             return (
               <div className={style.main__card} key={index}>
+                <div>
+                  <TiDelete className={style.main__card_deleteIcon} />
+                </div>
+
                 <div className={style.card__title}>
                   <h4>{card.title}</h4>
                 </div>

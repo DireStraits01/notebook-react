@@ -61,7 +61,6 @@
   background: #fffdd0;
   border-radius: 2px;
   align-items: flex-end;
-  cursor: pointer;
 }
 
 .main__card::before,
@@ -98,30 +97,13 @@
 .main__card:hover::after {
   right: 5px;
 }
-/*_____________________________________________*/
 
-/*_______________style_for_cart_date____________*/
-
-* {
-  box-sizing: border-box;
-}
-
-.card__time {
-  position: relative;
-  display: inline-block;
-  color: red;
-  padding: 15px;
-  background-color: #fffdd0;
-  box-shadow: inset 0px 0px 0px 10px red;
-}
-
-.card__time:after {
-  content: '';
+.main__card_deleteIcon {
+  color: tomato;
   position: absolute;
-  left: 0;
-  top: 0;
-  width: 20%;
-  height: 20%;
-  background-image: url('http://i.imgur.com/5O74VI6.jpg');
-  mix-blend-mode: lighten;
+  top: 0px;
+  right: 0px;
+  z-index: 1;
+  cursor: pointer;
 }
+/*_____________________________________________*/
