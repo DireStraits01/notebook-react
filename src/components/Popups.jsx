@@ -2,8 +2,14 @@ import style from './Popups.module.css';
 import { useState } from 'react';
 
 function Popups({ open, onCancle, handleAddNote }) {
+  const options = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  };
   const d = Date.now();
-  const addDate = `${new Date(d)}`;
+  const addDate = `${new Date(d).toLocaleDateString('en-US', options)}`;
   const [title, setTitle] = useState('');
   const [text, setText] = useState('');
 
