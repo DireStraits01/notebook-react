@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import './App.css';
 import Main from './components/Main';
+
 import Popups from './components/Popups';
+
 let cardId = 0;
 
 function App() {
@@ -12,6 +14,7 @@ function App() {
     return cardId++;
   };
   const onCancel = () => setIsPopusOpen(false);
+  // const closeCard = () => setIsCardOpen(false);
 
   const handleAddNote = (title, text, time) =>
     setCards(
@@ -19,12 +22,15 @@ function App() {
         ...card,
         { id: createUniqueId(), title: title, text: text, time: time },
       ],
-      onCancel(),
-      console.log(cards)
+      onCancel()
     );
 
   const handleRemoveCard = (cardForRemove) =>
     setCards(cards.filter((card) => card.id !== cardForRemove.id));
+
+  // const handleOpenCard = (cardForOpen) => {
+  //   setCards(cards.filter((card) => card.id === cardForOpen));
+  // };
 
   return (
     <div className="App">
