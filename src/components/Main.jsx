@@ -2,8 +2,12 @@ import style from './Main.module.css';
 import { TiDelete } from 'react-icons/ti';
 import FullCard from './FullCard';
 import { useState } from 'react';
-function Main({ onclick, cards, removeCard, onClickOpenCard }) {
+function Main({ onclick, cards, removeCard }) {
   const [isOpenCard, setIsOpenCard] = useState(false);
+  const [getIdCard, setGetIdCard] = useState('');
+  const handleClick = (e) => {
+    setGetIdCard(e.target.dataset.id);
+  };
 
   const handleCloseCard = () => {
     setIsOpenCard(false);
@@ -18,7 +22,7 @@ function Main({ onclick, cards, removeCard, onClickOpenCard }) {
         <div className={style.main__cards}>
           {cards.map((card) => {
             return (
-              <div className={style.main__card} key={card.id}>
+              <div className={style.main__card} key={card.id} data-id={card.id}>
                 <div>
                   <TiDelete
                     className={style.main__card_deleteIcon}
@@ -27,13 +31,29 @@ function Main({ onclick, cards, removeCard, onClickOpenCard }) {
                 </div>
                 <div className={style.card__title}>
                   <h4>{card.title}</h4>
+                  {console.log(cards.indexOf(card))}
                 </div>
                 <div className={style.card__body}>
                   <p className={style.card__body}>{card.text}</p>
                 </div>
                 <div className={style.card__time}>{card.time}</div>
-                <button onClick={() => setIsOpenCard(true)}>open</button>
-                <FullCard openCard={isOpenCard} closeCard={handleCloseCard} />
+                <button
+                  data-id={cards.indexOf(card)}
+                  onClick={(e) => {
+                    setIsOpenCard(true);
+                    handleClick(e);
+                  }}
+                  className={style.card__button}
+                >
+                  open
+                </button>
+                <FullCard
+                  openCard={isOpenCard}
+                  closeCard={handleCloseCard}
+                  getIdCard={getIdCard}
+                  cards={cards}
+                  removeCard={removeCard}
+                />
               </div>
             );
           })}

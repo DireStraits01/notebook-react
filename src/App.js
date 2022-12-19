@@ -39,7 +39,12 @@ function App() {
         cards={cards}
         removeCard={handleRemoveCard}
       />
-      <Popups open={isPopusOpen} onCancle={onCancel} addCard={handleAddNote} />
+      <Popups
+        open={isPopusOpen}
+        onCancle={onCancel}
+        addCard={handleAddNote}
+        cards={cards}
+      />
     </div>
   );
 }

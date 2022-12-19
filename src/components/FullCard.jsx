@@ -1,6 +1,7 @@
 import style from './FullCard.module.css';
 
-function FullCard({ openCard, closeCard }) {
+function FullCard({ openCard, closeCard, getIdCard, cards, removeCard }) {
+  const card = cards[getIdCard];
   if (!openCard) {
     return;
   }
@@ -9,15 +10,24 @@ function FullCard({ openCard, closeCard }) {
       <div className={style.main__card}>
         <div className={style.main__card}>
           <div className={style.card__title}>
-            <h1></h1>
+            <h1>{card.title}</h1>
           </div>
           <div className={style.card__body}>
-            <p className={style.card__body}></p>
+            <p>{card.text}</p>
           </div>
-          <div className={style.card__time}></div>
+          <div className={style.card__time}>
+            <p>{card.time}</p>
+          </div>
           <button>redact</button>
           <button onClick={() => closeCard(false)}>close</button>
-          <button>delete</button>
+          <button
+            onClick={() => {
+              removeCard(card);
+              closeCard(false);
+            }}
+          >
+            delete
+          </button>
         </div>
       </div>
     </>
