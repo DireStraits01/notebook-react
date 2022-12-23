@@ -6,10 +6,13 @@ function UpdateCard({ openForUpd, cancel, cardObject, cards, setCards }) {
   const [updatedObjectText, setUpdateObjectText] = useState('');
   const handleUpdateObject = (title, text) =>
     setCards(
-      { ...cards, [cardObject.title]: title }({
-        ...cards,
-        [cardObject.text]: text,
-      })
+      { ...cards, [cardObject.title]: title }(
+        {
+          ...cards,
+          [cardObject.text]: text,
+        },
+        cancel()
+      )
     );
 
   if (!openForUpd) {
