@@ -1,5 +1,6 @@
 import style from './Main.module.css';
 import { TiDelete } from 'react-icons/ti';
+import { IoCreateOutline } from 'react-icons/io5';
 import FullCard from './FullCard';
 import { useState } from 'react';
 function Main({ onclick, cards, removeCard }) {
@@ -15,7 +16,9 @@ function Main({ onclick, cards, removeCard }) {
   return (
     <>
       <nav className={style.main__navbar}>
-        <button className={style.main__addIcon} onClick={onclick}></button>
+        <button className={style.main__addIcon} onClick={onclick}>
+          <IoCreateOutline />
+        </button>
       </nav>
 
       <div className={style.main__row}>

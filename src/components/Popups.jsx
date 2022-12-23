@@ -3,10 +3,11 @@ import { useState } from 'react';
 
 function Popups({ open, onCancle, addCard }) {
   const options = {
-    weekday: 'long',
     year: 'numeric',
-    month: 'long',
+    month: 'numeric',
     day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
   };
   const d = Date.now();
   const addDate = `${new Date(d).toLocaleDateString('en-US', options)}`;

@@ -2,20 +2,22 @@
 
 .main__navbar {
   height: 100px;
-  background-color: #fff;
+  background-image: linear-gradient(to right, #fff, aliceblue);
   box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .main__addIcon {
   height: 5rem;
   width: 5rem;
-
+  font-size: 2rem;
+  color: #000f55;
   margin-top: 0.5rem;
   cursor: pointer;
   border-radius: 15%;
   border: none;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 5px 0px,
     rgb(231, 223, 223) 0px 1px 1px 0px;
+  background-image: linear-gradient(to right, aliceblue, rgb(219, 226, 232));
 }
 
 .card__body {
