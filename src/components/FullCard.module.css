@@ -1,15 +1,15 @@
 /*_______________style_for_card_______________*/
 .main__card {
-  margin: 20px auto;
+  margin: 0 auto;
   width: 600px;
   height: 550px;
   background: #fffdd0;
-  border-radius: 2px;
+  border-radius: 1%;
   align-items: flex-end;
   z-index: 2;
   text-align: center;
   position: fixed;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
