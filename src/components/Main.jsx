@@ -62,6 +62,8 @@ function Main({ onclick, cards, removeCard }) {
           })}
         </div>
       </div>
+
+      {/* modal delele window */}
     </>
   );
 }
