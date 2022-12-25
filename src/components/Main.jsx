@@ -4,6 +4,8 @@ import { IoCreateOutline } from 'react-icons/io5';
 import FullCard from './FullCard';
 import { useState } from 'react';
 import Popups from './Popups';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 function Main({
   onclick,
   cards,
@@ -11,6 +13,11 @@ function Main({
   handleOffClickBack,
   handleOnClickBack,
 }) {
+  /*_______________________ for modal button______________________*/
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  /*________________________________________________________________*/
   const btnMainCard = document.getElementById('btnMainCard');
   const [isOpenCard, setIsOpenCard] = useState(false);
   const [getIdCard, setGetIdCard] = useState('');
@@ -48,7 +55,8 @@ function Main({
                   <div>
                     <TiDelete
                       className={style.main__card_deleteIcon}
-                      onClick={() => removeCard(card)}
+                      variant="primary"
+                      onClick={handleShow}
                     />
                   </div>
                   <div className={style.card__title}>
@@ -70,12 +78,39 @@ function Main({
                   >
                     open
                   </button>
+
+                  <Modal
+                    show={show}
+                    onHide={handleClose}
+                    backdrop="static"
+                    keyboard={false}
+                  >
+                    <Modal.Header closeButton>
+                      <Modal.Title>Modal title</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                      I will not close if you click outside me. Don't even try
+                      to press escape key.
+                    </Modal.Body>
+                    <Modal.Footer>
+                      <Button variant="secondary" onClick={handleClose}>
+                        Close
+                      </Button>
+                      <Button
+                        variant="primary"
+                        onClick={() => removeCard(card)}
+                      >
+                        Understood
+                      </Button>
+                    </Modal.Footer>
+                  </Modal>
                 </div>
               );
             })}
           </div>
         </div>
       </div>
+
       <FullCard
         openCard={isOpenCard}
         closeCard={handleCloseCard}

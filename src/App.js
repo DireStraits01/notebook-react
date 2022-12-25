@@ -51,8 +51,8 @@ function App() {
         handleOffClickBack={handleOffClickBack}
         onclick={() => setIsPopusOpen(true)}
         cards={cards}
-        removeCard={handleRemoveCard}
         handleOnClickBack={handleOnClickBack}
+        removeCard={handleRemoveCard}
       />
       <Popups
         open={isPopusOpen}
