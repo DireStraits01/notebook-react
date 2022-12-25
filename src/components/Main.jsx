@@ -15,10 +15,16 @@ function Main({
   handleOnClickBack,
   removeAllCards,
 }) {
-  /*_______________________ for modal button______________________*/
+  /*_______________________ for modal button Card Delete______________________*/
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  /*________________________________________________________________*/
+
+  /*_______________________ for modal button All Cards Delete______________________*/
+  const [showAll, setShowAll] = useState(false);
+  const handleCloseAll = () => setShowAll(false);
+  const handleShowAll = () => setShowAll(true);
   /*________________________________________________________________*/
   const btnMainCard = document.getElementById('btnMainCard');
   const [isOpenCard, setIsOpenCard] = useState(false);
@@ -44,10 +50,7 @@ function Main({
             <IoCreateOutline />
           </button>
 
-          <button
-            className={style.main__deleteAllIcon}
-            onClick={() => removeAllCards()}
-          >
+          <button className={style.main__deleteAllIcon} onClick={handleShowAll}>
             <RiDeleteBin2Line />
           </button>
         </nav>
@@ -107,7 +110,10 @@ function Main({
                       </Button>
                       <Button
                         variant="primary"
-                        onClick={() => removeCard(card)}
+                        onClick={() => {
+                          removeCard(card);
+                          handleClose();
+                        }}
                       >
                         Understood
                       </Button>
@@ -130,6 +136,35 @@ function Main({
         handleOffClickBack={handleOffClickBack}
       />
       <Popups handleOnClickBack={handleOnClickBack} />
+
+      <Modal
+        show={showAll}
+        onHide={handleCloseAll}
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Modal title</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          I will not close if you click outside me. Don't even try to press
+          escape key.
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleCloseAll}>
+            Close
+          </Button>
+          <Button
+            variant="primary"
+            onClick={() => {
+              removeAllCards();
+              handleCloseAll();
+            }}
+          >
+            Understood
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 }

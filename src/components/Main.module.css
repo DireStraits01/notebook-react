@@ -22,13 +22,13 @@
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 5px 0px,
     rgb(231, 223, 223) 0px 1px 1px 0px;
   background-image: linear-gradient(to right, aliceblue, rgb(219, 226, 232));
-  margin-left: 20%;
+  margin-left: 30%;
 }
 
 .main__deleteAllIcon {
   color: #ec1c24;
   margin-left: 0;
-  margin-right: 20%;
+  margin-right: 30%;
 }
 .card__body {
   --max-lines: 3;
