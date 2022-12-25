@@ -10,3 +10,7 @@ body {
   /* background: #efefef; */
   background-image: linear-gradient(to right, #fff, aliceblue);
 }
+
+.hide {
+  pointer-events: none;
+}

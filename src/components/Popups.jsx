@@ -13,7 +13,14 @@ function Popups({ open, onCancle, addCard }) {
   const addDate = `${new Date(d).toLocaleDateString('en-US', options)}`;
   const [title, setTitle] = useState('');
   const [text, setText] = useState('');
-
+  const btnMainCard = document.getElementById('btnMainCard');
+  const specialForPop = () => {
+    if (btnMainCard !== undefined) {
+      btnMainCard.classList.remove('hide');
+    } else {
+      console.log(btnMainCard);
+    }
+  };
   if (!open) {
     return;
   }
@@ -48,10 +55,22 @@ function Popups({ open, onCancle, addCard }) {
             />
           </p>
         </div>
-        <button type="button" onClick={() => addCard(title, text, addDate)}>
+        <button
+          type="button"
+          onClick={() => {
+            addCard(title, text, addDate);
+            specialForPop();
+          }}
+        >
           submit
         </button>
-        <button type="button" onClick={onCancle}>
+        <button
+          type="button"
+          onClick={() => {
+            onCancle();
+            specialForPop();
+          }}
+        >
           cancel
         </button>
       </form>

@@ -2,9 +2,26 @@ import style from './FullCard.module.css';
 import { useState } from 'react';
 import UpdateCard from './UpdateCard';
 
-function FullCard({ openCard, closeCard, getIdCard, cards, removeCard }) {
+function FullCard({
+  openCard,
+  closeCard,
+  getIdCard,
+  cards,
+  removeCard,
+  handleOnClickBack,
+}) {
   const [openForUpd, SetOpenForUpd] = useState(false);
   const cardObject = cards[getIdCard];
+
+  const btnMainCard = document.getElementById('btnMainCard');
+  const specialForPop = () => {
+    if (btnMainCard !== undefined) {
+      btnMainCard.classList.remove('hide');
+    } else {
+      console.log(btnMainCard);
+    }
+  };
+
   if (!openCard) {
     return;
   }
@@ -27,17 +44,28 @@ function FullCard({ openCard, closeCard, getIdCard, cards, removeCard }) {
             cancel={() => SetOpenForUpd(false)}
             cardObject={cardObject}
           />
-          <button onClick={() => closeCard(false)}>close</button>
+          <button
+            id="btnCloseCard"
+            onClick={() => {
+              closeCard(false);
+              handleOnClickBack(btnMainCard);
+              specialForPop();
+            }}
+          >
+            close
+          </button>
           <button
             onClick={() => {
               removeCard(cardObject);
               closeCard(false);
               cards = { cards };
+              handleOnClickBack(btnMainCard);
+              specialForPop();
             }}
           >
             delete
           </button>
-        </div>{' '}
+        </div>
       </div>
     </>
   );

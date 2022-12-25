@@ -7,13 +7,31 @@ import UpdateCard from './components/UpdateCard';
 let cardId = 0;
 
 function App() {
+  const handleOffClickBack = (element) => {
+    if (element !== null && !element.classList.contains('screen')) {
+      element.classList.add('hide');
+    } else {
+      console.log('noooo');
+    }
+  };
+
+  const handleOnClickBack = (element) => {
+    if (element !== null && !element.classList.contains('screen')) {
+      element.classList.remove('hide');
+    } else {
+      console.log('yeee');
+    }
+  };
+
   const [cards, setCards] = useState([]);
   const [isPopusOpen, setIsPopusOpen] = useState(false);
 
   const createUniqueId = () => {
     return cardId++;
   };
-  const onCancel = () => setIsPopusOpen(false);
+  const onCancel = () => {
+    setIsPopusOpen(false);
+  };
 
   const handleAddNote = (title, text, time) =>
     setCards(
@@ -30,9 +48,11 @@ function App() {
   return (
     <div className="App">
       <Main
+        handleOffClickBack={handleOffClickBack}
         onclick={() => setIsPopusOpen(true)}
         cards={cards}
         removeCard={handleRemoveCard}
+        handleOnClickBack={handleOnClickBack}
       />
       <Popups
         open={isPopusOpen}

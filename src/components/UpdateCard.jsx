@@ -28,7 +28,7 @@ function UpdateCard({ openForUpd, cancel, cardObject, cards, setCards }) {
         <form>
           <div className={style.popups__input}>
             <h3>
-              <label for="cardTitle"></label>
+              <label htmlFor="cardTitle"></label>
               <input
                 placeholder="date"
                 type="text"
@@ -52,9 +52,8 @@ function UpdateCard({ openForUpd, cancel, cardObject, cards, setCards }) {
                 onChange={(e) =>
                   setUpdateObjectText((cardObject.text = e.target.value))
                 }
-              >
-                {cardObject.text}
-              </textarea>
+                defaultValue={cardObject.text}
+              ></textarea>
             </p>
           </div>
           <button
