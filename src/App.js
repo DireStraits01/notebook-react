@@ -45,6 +45,10 @@ function App() {
   const handleRemoveCard = (cardForRemove) =>
     setCards(cards.filter((card) => card.id !== cardForRemove.id));
 
+  const handleRemoveAllCard = () => {
+    setCards([]);
+  };
+
   return (
     <div className="App">
       <Main
@@ -53,6 +57,7 @@ function App() {
         cards={cards}
         handleOnClickBack={handleOnClickBack}
         removeCard={handleRemoveCard}
+        removeAllCards={handleRemoveAllCard}
       />
       <Popups
         open={isPopusOpen}

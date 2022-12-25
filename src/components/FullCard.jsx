@@ -1,7 +1,8 @@
-import style from './FullCard.module.css';
-import { useState } from 'react';
+import React, { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 import UpdateCard from './UpdateCard';
-
+import style from './FullCard.module.css';
 function FullCard({
   openCard,
   closeCard,
@@ -10,6 +11,11 @@ function FullCard({
   removeCard,
   handleOnClickBack,
 }) {
+  /*_______________________ for modal button______________________*/
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   const [openForUpd, SetOpenForUpd] = useState(false);
   const cardObject = cards[getIdCard];
 
@@ -54,19 +60,40 @@ function FullCard({
           >
             close
           </button>
-          <button
+          <button onClick={handleShow}>delete</button>
+        </div>
+      </div>
+
+      <Modal
+        show={show}
+        onHide={handleClose}
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Modal title</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          I will not close if you click outside me. Don't even try to press
+          escape key.
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button
+            variant="primary"
             onClick={() => {
               removeCard(cardObject);
               closeCard(false);
-              cards = { cards };
               handleOnClickBack(btnMainCard);
               specialForPop();
             }}
           >
-            delete
-          </button>
-        </div>
-      </div>
+            Understood
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 }

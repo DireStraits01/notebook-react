@@ -4,9 +4,13 @@
   height: 100px;
   background-image: linear-gradient(to right, #fff, aliceblue);
   box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.main__addIcon {
+.main__addIcon,
+.main__deleteAllIcon {
   height: 5rem;
   width: 5rem;
   font-size: 2rem;
@@ -18,8 +22,14 @@
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 5px 0px,
     rgb(231, 223, 223) 0px 1px 1px 0px;
   background-image: linear-gradient(to right, aliceblue, rgb(219, 226, 232));
+  margin-left: 20%;
 }
 
+.main__deleteAllIcon {
+  color: #ec1c24;
+  margin-left: 0;
+  margin-right: 20%;
+}
 .card__body {
   --max-lines: 3;
   --line-height: 1.4;
@@ -42,6 +52,11 @@
 }
 
 .main__addIcon:focus {
+  box-shadow: rgba(249, 249, 249, 0.99) 0px 2px 50px 0px,
+    rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+}
+
+.main__deleteAllIcon:focus {
   box-shadow: rgba(249, 249, 249, 0.99) 0px 2px 50px 0px,
     rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
 }

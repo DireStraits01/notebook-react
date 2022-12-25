@@ -1,8 +1,9 @@
-import style from './Main.module.css';
+import React, { useState } from 'react';
 import { TiDelete } from 'react-icons/ti';
 import { IoCreateOutline } from 'react-icons/io5';
+import { RiDeleteBin2Line } from 'react-icons/ri';
+import style from './Main.module.css';
 import FullCard from './FullCard';
-import { useState } from 'react';
 import Popups from './Popups';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -12,6 +13,7 @@ function Main({
   removeCard,
   handleOffClickBack,
   handleOnClickBack,
+  removeAllCards,
 }) {
   /*_______________________ for modal button______________________*/
   const [show, setShow] = useState(false);
@@ -40,6 +42,13 @@ function Main({
             }}
           >
             <IoCreateOutline />
+          </button>
+
+          <button
+            className={style.main__deleteAllIcon}
+            onClick={() => removeAllCards()}
+          >
+            <RiDeleteBin2Line />
           </button>
         </nav>
 
