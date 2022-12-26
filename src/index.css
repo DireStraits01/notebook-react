@@ -14,3 +14,13 @@ body {
 .hide {
   pointer-events: none;
 }
+
+footer {
+  min-height: 10rem;
+  width: 100%;
+  background-image: linear-gradient(to right, #2b5876, #4e4376);
+  font-family: 'Courier New', Courier, monospace;
+  color: #fff;
+  position: absolute;
+  bottom: -50rem;
+}
