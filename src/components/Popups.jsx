@@ -35,14 +35,15 @@ function Popups({ open, onCancle, addCard }) {
 
       <form>
         <div className={style.popups__input}>
-          <h3>
+          <h4>
             <input
+              maxlength="20"
               placeholder="please input title"
-              type="tex`t"
+              type="text"
               className={style.popups__title}
               onChange={(e) => setTitle(e.target.value)}
             />
-          </h3>
+          </h4>
         </div>
         <div
           className={style.popups__input}
@@ -51,6 +52,7 @@ function Popups({ open, onCancle, addCard }) {
         <div className={style.popups__input}>
           <p>
             <textarea
+              maxlength="600"
               placeholder="please input text"
               type="text"
               className={style.popups__body}
