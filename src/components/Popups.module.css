@@ -1,11 +1,11 @@
 .popups__container {
-  height: 500px;
-  width: 450px;
+  height: 550px;
+  width: 500px;
   padding: 8px;
-  background-color: #fff;
-  border-radius: 1%;
+  background-image: linear-gradient(to right, #ffafbd, #ffc3a0);
+  border-radius: 2%;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    0 10px 10px -5px rgba(0, 0, 0, 0.53);
   text-align: center;
   position: fixed;
   top: 50%;
@@ -28,4 +28,25 @@
 
 .popups__body {
   height: 250px;
+}
+
+.popups__buttons {
+  display: flex !important;
+  justify-content: space-around !important;
+  border: none;
+  font-size: 1.5rem;
+  background-color: aquamarine !important;
+}
+
+.popus__close {
+  border: none !important;
+  background-color: #ec1c24 !important;
+  width: 5rem;
+}
+
+.popus__add {
+  border: none !important;
+  background-color: #00438b !important;
+  width: 5rem;
+  margin-right: 5rem;
 }

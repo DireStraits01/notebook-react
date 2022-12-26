@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { TiDelete } from 'react-icons/ti';
 import { IoCreateOutline } from 'react-icons/io5';
 import { RiDeleteBin2Line } from 'react-icons/ri';
+import { TiArrowBackOutline } from 'react-icons/ti';
 import style from './Main.module.css';
 import FullCard from './FullCard';
 import Popups from './Popups';
@@ -86,9 +87,9 @@ function Main({
 
                       handleOffClickBack(btnMainCard);
                     }}
-                    className={style.card__button}
+                    className={style.main__card__btnOpen}
                   >
-                    open
+                    read
                   </button>
 
                   <Modal
@@ -98,24 +99,27 @@ function Main({
                     keyboard={false}
                   >
                     <Modal.Header closeButton>
-                      <Modal.Title>Modal title</Modal.Title>
+                      <Modal.Title>
+                        Delete card: {card.title}&nbsp;{card.time}?
+                      </Modal.Title>
                     </Modal.Header>
-                    <Modal.Body>
-                      I will not close if you click outside me. Don't even try
-                      to press escape key.
-                    </Modal.Body>
                     <Modal.Footer>
-                      <Button variant="secondary" onClick={handleClose}>
-                        Close
-                      </Button>
                       <Button
+                        className={style.modal__delete}
                         variant="primary"
                         onClick={() => {
                           removeCard(card);
                           handleClose();
                         }}
                       >
-                        Understood
+                        <RiDeleteBin2Line />
+                      </Button>
+                      <Button
+                        variant="secondary"
+                        className={style.modal__close}
+                        onClick={handleClose}
+                      >
+                        <TiArrowBackOutline />
                       </Button>
                     </Modal.Footer>
                   </Modal>
@@ -144,24 +148,26 @@ function Main({
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Modal title</Modal.Title>
+          <Modal.Title>Delete All </Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-          I will not close if you click outside me. Don't even try to press
-          escape key.
-        </Modal.Body>
+        <Modal.Body>Delete all reminders?</Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleCloseAll}>
-            Close
-          </Button>
           <Button
+            className={style.modal__delete}
             variant="primary"
             onClick={() => {
               removeAllCards();
               handleCloseAll();
             }}
           >
-            Understood
+            <RiDeleteBin2Line />
+          </Button>{' '}
+          <Button
+            variant="secondary"
+            className={style.modal__close}
+            onClick={handleCloseAll}
+          >
+            <TiArrowBackOutline />
           </Button>
         </Modal.Footer>
       </Modal>

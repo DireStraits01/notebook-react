@@ -1,5 +1,8 @@
 import style from './Popups.module.css';
 import { useState } from 'react';
+import { TiArrowBackOutline } from 'react-icons/ti';
+import Button from 'react-bootstrap/Button';
+import { AiOutlineFileAdd } from 'react-icons/ai';
 
 function Popups({ open, onCancle, addCard }) {
   const options = {
@@ -27,15 +30,15 @@ function Popups({ open, onCancle, addCard }) {
   return (
     <div className={style.popups__container}>
       <div className={style.head}>
-        <h2>Insert</h2>
+        <h2>Сreate a reminder</h2>
       </div>
 
       <form>
         <div className={style.popups__input}>
           <h3>
             <input
-              placeholder="data"
-              type="text"
+              placeholder="please input title"
+              type="tex`t"
               className={style.popups__title}
               onChange={(e) => setTitle(e.target.value)}
             />
@@ -48,31 +51,36 @@ function Popups({ open, onCancle, addCard }) {
         <div className={style.popups__input}>
           <p>
             <textarea
-              placeholder="note"
+              placeholder="please input text"
               type="text"
               className={style.popups__body}
               onChange={(e) => setText(e.target.value)}
             />
           </p>
         </div>
-        <button
+        <div className={style.popups__buttons}></div>
+        <Button
+          variant="primary"
+          className={style.popus__add}
           type="button"
           onClick={() => {
             addCard(title, text, addDate);
             specialForPop();
           }}
         >
-          submit
-        </button>
-        <button
+          <AiOutlineFileAdd />
+        </Button>
+        <Button
+          variant="secondary"
+          className={style.popus__close}
           type="button"
           onClick={() => {
             onCancle();
             specialForPop();
           }}
         >
-          cancel
-        </button>
+          <TiArrowBackOutline />
+        </Button>
       </form>
     </div>
   );

@@ -79,6 +79,7 @@
   border-radius: 2px;
   align-items: flex-end;
   color: #00438b;
+  overflow: scroll;
 }
 
 .main__card::before,
@@ -123,4 +124,22 @@
   right: 0px;
   cursor: pointer;
 }
+.main__card__btnOpen {
+  background-color: #fffdd0;
+  font-size: 1rem !important;
+  border: none !important;
+  color: #00438b;
+}
+
 /*_____________________________________________*/
+
+/*_________________modal_______________________*/
+.modal__delete {
+  background-color: #ec1c24 !important;
+  border: none !important;
+}
+.modal__close {
+  border: none !important;
+
+  background-color: #00438b !important;
+}

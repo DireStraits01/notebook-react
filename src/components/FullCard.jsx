@@ -34,16 +34,8 @@ function FullCard({
   return (
     <>
       <div className={style.main__card}>
-        <div className={style.main__card}>
-          <div className={style.card__title}>
-            <h1>{cardObject.title}</h1>
-          </div>
-          <div className={style.card__body}>
-            <p>{cardObject.text}</p>
-          </div>
-          <div className={style.card__time}>
-            <p>{cardObject.time}</p>
-          </div>
+        <div className={style.main__card__buttons}>
+          <button onClick={handleShow}>delete</button>
           <button onClick={() => SetOpenForUpd(true)}>update</button>
           <UpdateCard
             openForUpd={openForUpd}
@@ -60,7 +52,15 @@ function FullCard({
           >
             close
           </button>
-          <button onClick={handleShow}>delete</button>
+        </div>
+        <div className={style.card__title}>
+          <h1>{cardObject.title}</h1>
+        </div>
+        <div className={style.card__body}>
+          <p>{cardObject.text}</p>
+        </div>
+        <div className={style.card__time}>
+          <p>{cardObject.time}</p>
         </div>
       </div>
 
