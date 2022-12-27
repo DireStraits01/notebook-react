@@ -50,6 +50,11 @@ function Main({
           >
             <IoCreateOutline />
           </button>
+          {!!cards.length && (
+            <div className={style.main__navbar_counter}>
+              <p>{cards.length}</p>
+            </div>
+          )}
 
           <button className={style.main__deleteAllIcon} onClick={handleShowAll}>
             <RiDeleteBin2Line />
@@ -93,13 +98,13 @@ function Main({
                   </button>
 
                   <Modal
-                    className={style.modal}
+                    className="my-modal"
                     show={show}
                     onHide={handleClose}
                     backdrop="static"
                     keyboard={false}
                   >
-                    <Modal.Header closeButton>
+                    <Modal.Header>
                       <Modal.Title>
                         Delete card: {card.title}&nbsp;{card.time}?
                       </Modal.Title>
@@ -152,7 +157,7 @@ function Main({
         <Modal.Header closeButton>
           <Modal.Title>Delete All </Modal.Title>
         </Modal.Header>
-        <Modal.Body>Delete all reminders?</Modal.Body>
+        <Modal.Body>Delete {cards.length} reminders?</Modal.Body>
         <Modal.Footer>
           <Button
             className={style.modal__delete}

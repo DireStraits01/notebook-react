@@ -37,6 +37,7 @@ function FullCard({
   return (
     <>
       <div className={style.main__card}>
+        {' '}
         <div className={style.main__card__buttons}>
           <button onClick={handleShow} className={style.main__card__btnDelete}>
             <RiDeleteBin2Line />
@@ -62,16 +63,16 @@ function FullCard({
             }}
           >
             <TiArrowBackOutline />
-          </button>
+          </button>{' '}
+        </div>{' '}
+        <div className={style.card__time}>
+          <p>{cardObject.time}</p>
         </div>
         <div className={style.card__title}>
           <h1>{cardObject.title}</h1>
         </div>
         <div className={style.card__body}>
           <p>{cardObject.text}</p>
-        </div>
-        <div className={style.card__time}>
-          <p>{cardObject.time}</p>
         </div>
       </div>
 
