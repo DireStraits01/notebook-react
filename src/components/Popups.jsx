@@ -37,7 +37,7 @@ function Popups({ open, onCancle, addCard }) {
         <div className={style.popups__input}>
           <h4>
             <input
-              maxlength="20"
+              maxLength="20"
               placeholder="please input title"
               type="text"
               className={style.popups__title}
@@ -52,7 +52,7 @@ function Popups({ open, onCancle, addCard }) {
         <div className={style.popups__input}>
           <p>
             <textarea
-              maxlength="600"
+              maxLength="600"
               placeholder="please input text"
               type="text"
               className={style.popups__body}

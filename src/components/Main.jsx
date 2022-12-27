@@ -93,6 +93,7 @@ function Main({
                   </button>
 
                   <Modal
+                    className={style.modal}
                     show={show}
                     onHide={handleClose}
                     backdrop="static"
@@ -142,6 +143,7 @@ function Main({
       <Popups handleOnClickBack={handleOnClickBack} />
 
       <Modal
+        className="my-modal"
         show={showAll}
         onHide={handleCloseAll}
         backdrop="static"
@@ -161,7 +163,7 @@ function Main({
             }}
           >
             <RiDeleteBin2Line />
-          </Button>{' '}
+          </Button>
           <Button
             variant="secondary"
             className={style.modal__close}

@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { TiArrowBackOutline } from 'react-icons/ti';
+import { RiDeleteBin2Line } from 'react-icons/ri';
+import { FiEdit2 } from 'react-icons/fi';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import UpdateCard from './UpdateCard';
@@ -35,14 +38,22 @@ function FullCard({
     <>
       <div className={style.main__card}>
         <div className={style.main__card__buttons}>
-          <button onClick={handleShow}>delete</button>
-          <button onClick={() => SetOpenForUpd(true)}>update</button>
+          <button onClick={handleShow} className={style.main__card__btnDelete}>
+            <RiDeleteBin2Line />
+          </button>
+          <button
+            className={style.main__card__btnEdit}
+            onClick={() => SetOpenForUpd(true)}
+          >
+            <FiEdit2 />
+          </button>
           <UpdateCard
             openForUpd={openForUpd}
             cancel={() => SetOpenForUpd(false)}
             cardObject={cardObject}
           />
           <button
+            className={style.main__card__btnBack}
             id="btnCloseCard"
             onClick={() => {
               closeCard(false);
@@ -50,7 +61,7 @@ function FullCard({
               specialForPop();
             }}
           >
-            close
+            <TiArrowBackOutline />
           </button>
         </div>
         <div className={style.card__title}>
@@ -78,10 +89,15 @@ function FullCard({
           escape key.
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
+          <Button
+            variant="secondary"
+            onClick={handleClose}
+            className={style.modal__close}
+          >
+            <TiArrowBackOutline />
           </Button>
           <Button
+            className={style.modal__delete}
             variant="primary"
             onClick={() => {
               removeCard(cardObject);
@@ -90,7 +106,7 @@ function FullCard({
               specialForPop();
             }}
           >
-            Understood
+            <RiDeleteBin2Line />
           </Button>
         </Modal.Footer>
       </Modal>

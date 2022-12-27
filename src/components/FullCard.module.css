@@ -14,6 +14,56 @@
   transform: translate(-50%, -50%);
   color: #00438b;
   padding: 2rem;
+  margin: 0;
+  padding: 1rem;
+}
+
+.main__card__buttons {
+  display: flex;
+
+  justify-content: flex-end;
+}
+.main__card__btnDelete,
+.main__card__btnBack,
+.main__card__btnEdit {
+  border-radius: 50%;
+  border: none;
+  background-color: #ec1c24 !important;
+  width: 1.5rem;
+  height: 1.5rem;
+  text-align: center;
+  line-height: 1.5rem;
+  color: #ec1c24;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 5px 0px,
+    rgb(231, 223, 223) 0px 1px 1px 0px;
+}
+.main__card__btnBack {
+  background-color: #00438b !important;
+  color: #00438b;
+  margin-left: 0.3rem;
+}
+.main__card__btnEdit {
+  background-color: #2e8b57 !important;
+  color: #2e8b57;
+  margin-left: 0.3rem;
 }
 
 /*_____________________________________________*/
+.main__card__btnDelete:hover {
+  color: white;
+}
+.main__card__btnEdit:hover {
+  color: white;
+}
+.main__card__btnBack:hover {
+  color: white;
+}
+/*_____________modal___________________________*/
+.modal__delete {
+  background-color: #ec1c24 !important;
+  border: none !important;
+}
+.modal__close {
+  border: none !important;
+  background-color: #00438b !important;
+}

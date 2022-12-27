@@ -31,3 +31,19 @@
 .popups__body {
   height: 250px;
 }
+/*__________buttons__________*/
+
+.editBtn__back {
+  background-color: #ec1c24 !important;
+  border: none !important;
+  width: 6rem;
+  float: right;
+  margin-right: 8rem;
+}
+.editBtn__edit {
+  border: none !important;
+  background-color: #2e8b57 !important;
+  width: 6rem;
+  float: left;
+  margin-left: 8rem;
+}
