@@ -92,7 +92,6 @@
   border-radius: 2px;
   align-items: flex-end;
   color: #00438b;
-  overflow: scroll;
 }
 
 .main__card::before,

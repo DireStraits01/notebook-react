@@ -46,10 +46,12 @@ function Main({
             onClick={() => {
               onclick();
               handleOffClickBack(btnMainCard);
+              console.log(true + false);
             }}
           >
             <IoCreateOutline />
           </button>
+
           {!!cards.length && (
             <div className={style.main__navbar_counter}>
               <p>{cards.length}</p>
