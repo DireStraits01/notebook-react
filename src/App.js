@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import Main from './components/Main';
 import Popups from './components/Popups';
@@ -19,12 +19,27 @@ function App() {
     if (element !== null && !element.classList.contains('screen')) {
       element.classList.remove('hide');
     } else {
-      console.log('yeee');
     }
   };
 
   const [cards, setCards] = useState([]);
   const [isPopusOpen, setIsPopusOpen] = useState(false);
+
+  //______________________local storage______________________________
+
+  useEffect(() => {
+    if (cards.length !== 0) {
+      localStorage.setItem('cardsLocal', JSON.stringify(cards));
+    }
+  }, [cards]);
+
+  useEffect(() => {
+    const cardsLocal = JSON.parse(localStorage.getItem('cardsLocal'));
+    if (cardsLocal) {
+      setCards(cardsLocal);
+    }
+  }, []);
+  //___________________________________________________________________
 
   const createUniqueId = () => {
     return cardId++;
