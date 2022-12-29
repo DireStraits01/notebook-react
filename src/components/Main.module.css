@@ -63,14 +63,14 @@
 
 .main__navbar_counter {
   height: 4rem;
-  width: 4rem;
+  width: 8rem;
   font-size: 3rem;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Orbitron', sans-serif;
   font-weight: 500;
   line-height: 4rem;
-  color: #fff;
-  background-image: linear-gradient(to right, #ffafbd, #ffc3a0);
-  border-radius: 50%;
+  color: #24b48a;
+  background-image: linear-gradient(to right, #545454, #181214);
+  border-radius: 15%;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 5px 0px,
     rgb(231, 223, 223) 0px 1px 1px 0px;
 }

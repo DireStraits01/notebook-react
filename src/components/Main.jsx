@@ -99,6 +99,7 @@ function Main({
                     read
                   </button>
 
+                  {/* 
                   <Modal
                     className="my-modal"
                     show={show}
@@ -111,7 +112,9 @@ function Main({
                         Delete card: {card.title}&nbsp;{card.time}?
                       </Modal.Title>
                     </Modal.Header>
+                    <Modal.Body></Modal.Body>
                     <Modal.Footer>
+                      <p>gol</p>
                       <Button
                         className={style.modal__delete}
                         variant="primary"
@@ -126,6 +129,41 @@ function Main({
                         variant="secondary"
                         className={style.modal__close}
                         onClick={handleClose}
+                      >
+                        <TiArrowBackOutline />
+                      </Button>
+                    </Modal.Footer>
+                  </Modal> */}
+                  <Modal
+                    className="my-modal"
+                    show={show}
+                    onHide={handleClose}
+                    backdrop="static"
+                    keyboard={false}
+                  >
+                    <Modal.Header closeButton>
+                      <Modal.Title>Delete note </Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                      Delete {cards.title} {card.time}?
+                    </Modal.Body>
+                    <Modal.Footer>
+                      <Button
+                        className={style.modal__delete}
+                        variant="primary"
+                        onClick={() => {
+                          removeCard(card);
+                          handleClose();
+                        }}
+                      >
+                        <RiDeleteBin2Line />
+                      </Button>
+                      <Button
+                        variant="secondary"
+                        className={style.modal__close}
+                        onClick={() => {
+                          handleClose();
+                        }}
                       >
                         <TiArrowBackOutline />
                       </Button>
