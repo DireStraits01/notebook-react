@@ -7,6 +7,10 @@ import UpdateCard from './components/UpdateCard';
 let cardId = 0;
 
 function App() {
+  const [cards, setCards] = useState([]); // main array for note
+  const [isPopusOpen, setIsPopusOpen] = useState(false); // array for close and open popup(Popup.jsx)
+
+  //_____function for disuable click for background when popup swiitch on
   const handleOffClickBack = (element) => {
     if (element !== null && !element.classList.contains('screen')) {
       element.classList.add('hide');
@@ -14,18 +18,16 @@ function App() {
       console.log('noooo');
     }
   };
-
+  //____function for aviable click for background when popup swiitch off
   const handleOnClickBack = (element) => {
     if (element !== null && !element.classList.contains('screen')) {
       element.classList.remove('hide');
     } else {
     }
   };
+  //___________________________________________________________________
 
-  const [cards, setCards] = useState([]);
-  const [isPopusOpen, setIsPopusOpen] = useState(false);
-
-  //______________________local storage______________________________
+  //______________________local storage________________________________
 
   useEffect(() => {
     if (cards.length !== 0) {
@@ -42,12 +44,15 @@ function App() {
   //___________________________________________________________________
 
   const createUniqueId = () => {
+    // function add id for cards
     return cardId++;
   };
   const onCancel = () => {
     setIsPopusOpen(false);
   };
+  //_______________________________________________________________________
 
+  //_______________________add new note to array___________________________
   const handleAddNote = (title, text, time) =>
     setCards(
       (card) => [
@@ -56,13 +61,18 @@ function App() {
       ],
       onCancel()
     );
+  //_______________________________________________________________________
 
+  //______________________-delete note from main array_____________________
   const handleRemoveCard = (cardForRemove) =>
     setCards(cards.filter((card) => card.id !== cardForRemove.id));
+  //_________________________________________________________________________
 
+  //_____________________clear all notes_____________________________________
   const handleRemoveAllCard = () => {
     setCards([]);
   };
+  //_____________________________________________________________________
 
   return (
     <div className="App">
