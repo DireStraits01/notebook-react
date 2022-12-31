@@ -28,6 +28,7 @@ function Main({
   const handleShowAll = () => setShowAll(true);
   /*________________________________________________________________*/
   const btnMainCard = document.getElementById('btnMainCard');
+
   const [isOpenCard, setIsOpenCard] = useState(false);
   const [getIdCard, setGetIdCard] = useState('');
   const handleClick = (e) => {
@@ -46,6 +47,7 @@ function Main({
             onClick={() => {
               onclick();
               handleOffClickBack(btnMainCard);
+
               console.log(true + false);
             }}
           >
@@ -58,7 +60,11 @@ function Main({
             </div>
           )}
 
-          <button className={style.main__deleteAllIcon} onClick={handleShowAll}>
+          <button
+            id="btnForAllDelete"
+            className={style.main__deleteAllIcon}
+            onClick={handleShowAll}
+          >
             <RiDeleteBin2Line />
           </button>
         </nav>
@@ -99,41 +105,6 @@ function Main({
                     read
                   </button>
 
-                  {/* 
-                  <Modal
-                    className="my-modal"
-                    show={show}
-                    onHide={handleClose}
-                    backdrop="static"
-                    keyboard={false}
-                  >
-                    <Modal.Header>
-                      <Modal.Title>
-                        Delete card: {card.title}&nbsp;{card.time}?
-                      </Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body></Modal.Body>
-                    <Modal.Footer>
-                      <p>gol</p>
-                      <Button
-                        className={style.modal__delete}
-                        variant="primary"
-                        onClick={() => {
-                          removeCard(card);
-                          handleClose();
-                        }}
-                      >
-                        <RiDeleteBin2Line />
-                      </Button>
-                      <Button
-                        variant="secondary"
-                        className={style.modal__close}
-                        onClick={handleClose}
-                      >
-                        <TiArrowBackOutline />
-                      </Button>
-                    </Modal.Footer>
-                  </Modal> */}
                   <Modal
                     className="my-modal"
                     show={show}

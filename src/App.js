@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
+import { v4 as uuid } from 'uuid';
 import './App.css';
 import Main from './components/Main';
 import Popups from './components/Popups';
 import UpdateCard from './components/UpdateCard';
 
-let cardId = 0;
+// let cardId = 0;
 
 function App() {
   const [cards, setCards] = useState([]); // main array for note
@@ -14,20 +15,17 @@ function App() {
   const handleOffClickBack = (element) => {
     if (element !== null && !element.classList.contains('screen')) {
       element.classList.add('hide');
-    } else {
-      console.log('noooo');
     }
   };
   //____function for aviable click for background when popup swiitch off
   const handleOnClickBack = (element) => {
     if (element !== null && !element.classList.contains('screen')) {
       element.classList.remove('hide');
-    } else {
     }
   };
   //___________________________________________________________________
 
-  //______________________local storage________________________________
+  // //______________________local storage________________________________
 
   useEffect(() => {
     if (cards.length !== 0) {
@@ -43,10 +41,10 @@ function App() {
   }, []);
   //___________________________________________________________________
 
-  const createUniqueId = () => {
-    // function add id for cards
-    return cardId++;
-  };
+  // const createUniqueId = () => {
+  //   // function add id for cards
+  //   return cardId++;
+  // };
   const onCancel = () => {
     setIsPopusOpen(false);
   };
@@ -55,10 +53,7 @@ function App() {
   //_______________________add new note to array___________________________
   const handleAddNote = (title, text, time) =>
     setCards(
-      (card) => [
-        ...card,
-        { id: createUniqueId(), title: title, text: text, time: time },
-      ],
+      (card) => [...card, { id: uuid(), title: title, text: text, time: time }],
       onCancel()
     );
   //_______________________________________________________________________
