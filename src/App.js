@@ -59,13 +59,19 @@ function App() {
   //_______________________________________________________________________
 
   //______________________-delete note from main array_____________________
-  const handleRemoveCard = (cardForRemove) =>
+  const handleRemoveCard = (cardForRemove) => {
     setCards(cards.filter((card) => card.id !== cardForRemove.id));
+    console.log(cardForRemove.title);
+    if (cards.length <= 1) {
+      localStorage.clear();
+    }
+  };
   //_________________________________________________________________________
 
   //_____________________clear all notes_____________________________________
   const handleRemoveAllCard = () => {
     setCards([]);
+    localStorage.clear();
   };
   //_____________________________________________________________________
 

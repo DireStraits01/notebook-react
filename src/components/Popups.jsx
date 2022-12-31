@@ -67,6 +67,8 @@ function Popups({ open, onCancle, addCard }) {
           type="button"
           onClick={() => {
             addCard(title, text, addDate);
+            setTitle('');
+            setText('');
             specialForPop();
           }}
         >

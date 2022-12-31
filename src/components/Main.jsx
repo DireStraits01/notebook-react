@@ -20,6 +20,10 @@ function Main({
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const [cardModal, setCardModal] = useState('');
+
+  const sentCardtoModal = (cardForDelete) => setCardModal(cardForDelete);
   /*________________________________________________________________*/
 
   /*_______________________ for modal button All Cards Delete______________________*/
@@ -82,7 +86,10 @@ function Main({
                     <TiDelete
                       className={style.main__card_deleteIcon}
                       variant="primary"
-                      onClick={handleShow}
+                      onClick={() => {
+                        handleShow();
+                        sentCardtoModal(card);
+                      }}
                     />
                   </div>
                   <div className={style.card__title}>
@@ -105,6 +112,7 @@ function Main({
                     read
                   </button>
 
+                  {/* 
                   <Modal
                     className="my-modal"
                     show={show}
@@ -116,7 +124,7 @@ function Main({
                       <Modal.Title>Delete note </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                      Delete {cards.title} {card.time}?
+                      Delete {card.title} {card.time}?
                     </Modal.Body>
                     <Modal.Footer>
                       <Button
@@ -139,7 +147,7 @@ function Main({
                         <TiArrowBackOutline />
                       </Button>
                     </Modal.Footer>
-                  </Modal>
+                  </Modal> */}
                 </div>
               );
             })}
@@ -157,6 +165,42 @@ function Main({
         handleOffClickBack={handleOffClickBack}
       />
       <Popups handleOnClickBack={handleOnClickBack} />
+
+      <Modal
+        className="my-modal"
+        show={show}
+        onHide={handleClose}
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Delete note </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          Delete {cardModal.title} {cardModal.time}?
+        </Modal.Body>
+        <Modal.Footer>
+          <Button
+            className={style.modal__delete}
+            variant="primary"
+            onClick={() => {
+              removeCard(cardModal);
+              handleClose();
+            }}
+          >
+            <RiDeleteBin2Line />
+          </Button>
+          <Button
+            variant="secondary"
+            className={style.modal__close}
+            onClick={() => {
+              handleClose();
+            }}
+          >
+            <TiArrowBackOutline />
+          </Button>
+        </Modal.Footer>
+      </Modal>
 
       <Modal
         className="my-modal"
