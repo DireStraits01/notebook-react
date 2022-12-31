@@ -24,6 +24,7 @@
   /* background-image: linear-gradient(to right, aliceblue, rgb(219, 226, 232)); */
   background-image: linear-gradient(to right, #545454, #181214);
   margin-left: 30%;
+  transition: 0.2s all;
 }
 
 .main__deleteAllIcon {
@@ -31,35 +32,21 @@
   margin-left: 0;
   margin-right: 30%;
 }
-.card__body {
-  --max-lines: 3;
-  --line-height: 1.4;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  position: relative;
-  -webkit-line-clamp: var(--max-lines);
-  max-height: calc(var(--max-lines) * 1em * var(--line-height));
+
+.main__addIcon:active {
+  transform: scale(0.98);
+  /* Scaling button to 0.98 to its original size */
+  box-shadow: 3px 2px 22px 1px rgba(165, 165, 165, 0.24);
+  /* Lowering the shadow */
+  background-image: linear-gradient(to right, #737171, #181214);
 }
 
-.card__body::before {
-  content: '';
-  position: absolute;
-  height: calc(1em * var(--line-height));
-  width: 100%;
-  bottom: 0;
-  pointer-events: none;
-  background: linear-gradient(to bottom, transparent, #fffdd0);
-}
-
-.main__addIcon:focus {
-  box-shadow: rgba(249, 249, 249, 0.99) 0px 2px 50px 0px,
-    rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
-}
-
-.main__deleteAllIcon:focus {
-  box-shadow: rgba(249, 249, 249, 0.99) 0px 2px 50px 0px,
-    rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+.main__deleteAllIcon:active {
+  transform: scale(0.98);
+  /* Scaling button to 0.98 to its original size */
+  box-shadow: 3px 2px 22px 1px rgba(183, 183, 183, 0.24);
+  /* Lowering the shadow */
+  background-image: linear-gradient(to right, #737171, #181214);
 }
 
 .main__navbar_counter {
@@ -142,6 +129,27 @@
   font-size: 1rem !important;
   border: none !important;
   color: #00438b;
+}
+
+.card__body {
+  --max-lines: 3;
+  --line-height: 1.4;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  position: relative;
+  -webkit-line-clamp: var(--max-lines);
+  max-height: calc(var(--max-lines) * 1em * var(--line-height));
+}
+
+.card__body::before {
+  content: '';
+  position: absolute;
+  height: calc(1em * var(--line-height));
+  width: 100%;
+  bottom: 0;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent, #fffdd0);
 }
 
 /*_____________________________________________*/
