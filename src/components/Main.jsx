@@ -51,8 +51,6 @@ function Main({
             onClick={() => {
               onclick();
               handleOffClickBack(btnMainCard);
-
-              console.log(true + false);
             }}
           >
             <IoCreateOutline />
@@ -68,6 +66,7 @@ function Main({
             id="btnForAllDelete"
             className={style.main__deleteAllIcon}
             onClick={handleShowAll}
+            disabled={cards.length === 0}
           >
             <RiDeleteBin2Line />
           </button>
@@ -111,43 +110,6 @@ function Main({
                   >
                     read
                   </button>
-
-                  {/* 
-                  <Modal
-                    className="my-modal"
-                    show={show}
-                    onHide={handleClose}
-                    backdrop="static"
-                    keyboard={false}
-                  >
-                    <Modal.Header closeButton>
-                      <Modal.Title>Delete note </Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                      Delete {card.title} {card.time}?
-                    </Modal.Body>
-                    <Modal.Footer>
-                      <Button
-                        className={style.modal__delete}
-                        variant="primary"
-                        onClick={() => {
-                          removeCard(card);
-                          handleClose();
-                        }}
-                      >
-                        <RiDeleteBin2Line />
-                      </Button>
-                      <Button
-                        variant="secondary"
-                        className={style.modal__close}
-                        onClick={() => {
-                          handleClose();
-                        }}
-                      >
-                        <TiArrowBackOutline />
-                      </Button>
-                    </Modal.Footer>
-                  </Modal> */}
                 </div>
               );
             })}

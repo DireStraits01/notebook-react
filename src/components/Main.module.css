@@ -49,6 +49,11 @@
   background-image: linear-gradient(to right, #737171, #181214);
 }
 
+.main__deleteAllIcon:disabled {
+  color: gray;
+  pointer-events: none;
+}
+
 .main__navbar_counter {
   height: 4rem;
   width: 8rem;
