@@ -50,3 +50,14 @@
   width: 5rem;
   margin-right: 5rem;
 }
+
+@media screen and (max-width: 800px) {
+  .popups__container {
+    width: 95%;
+  }
+
+  .popups__title,
+  .popups__body {
+    width: 95%;
+  }
+}
