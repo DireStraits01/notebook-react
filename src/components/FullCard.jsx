@@ -82,14 +82,14 @@ function FullCard({
         backdrop="static"
         keyboard={false}
       >
-        <Modal.Header closeButton>
+        <Modal.Header closeButton className="border-0">
           <Modal.Title>Modal title</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           I will not close if you click outside me. Don't even try to press
           escape key.
         </Modal.Body>
-        <Modal.Footer>
+        <Modal.Footer className="border-0">
           <Button
             variant="secondary"
             onClick={handleClose}

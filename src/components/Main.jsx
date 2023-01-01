@@ -135,13 +135,13 @@ function Main({
         backdrop="static"
         keyboard={false}
       >
-        <Modal.Header closeButton>
+        <Modal.Header closeButton className="border-0">
           <Modal.Title>Delete note </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           Delete {cardModal.title} {cardModal.time}?
         </Modal.Body>
-        <Modal.Footer>
+        <Modal.Footer className="border-0">
           <Button
             className={style.modal__delete}
             variant="primary"
@@ -171,11 +171,11 @@ function Main({
         backdrop="static"
         keyboard={false}
       >
-        <Modal.Header closeButton>
+        <Modal.Header closeButton className="border-0">
           <Modal.Title>Delete All </Modal.Title>
         </Modal.Header>
         <Modal.Body>Delete {cards.length} reminders?</Modal.Body>
-        <Modal.Footer>
+        <Modal.Footer className="border-0">
           <Button
             className={style.modal__delete}
             variant="primary"
