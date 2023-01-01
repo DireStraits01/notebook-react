@@ -72,4 +72,9 @@
   .main__card {
     width: 85%;
   }
+  .main__card__btnBack,
+  .main__card__btnEdit,
+  .main__card__btnBack {
+    color: white;
+  }
 }
