@@ -2,6 +2,7 @@
 
 .main__navbar {
   height: 100px;
+  width: 100%;
   background-image: linear-gradient(to right, #fff, aliceblue);
   box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   display: flex;
@@ -67,6 +68,14 @@
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 5px 0px,
     rgb(231, 223, 223) 0px 1px 1px 0px;
 }
+
+@media screen and (max-width: 800px) {
+  .main__addIcon,
+  .main__deleteAllIcon {
+    margin: 1rem;
+  }
+}
+
 /*_______________card_row_______________*/
 
 .main__cards {
