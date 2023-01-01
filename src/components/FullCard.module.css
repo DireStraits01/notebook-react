@@ -67,3 +67,9 @@
   border: none !important;
   background-color: #00438b !important;
 }
+
+@media screen and (max-width: 800px) {
+  .main__card {
+    width: 85%;
+  }
+}
