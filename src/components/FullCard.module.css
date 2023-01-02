@@ -74,7 +74,7 @@
   }
   .main__card__btnBack,
   .main__card__btnEdit,
-  .main__card__btnBack {
+  .main__card__btnDelete {
     color: white;
   }
 }
