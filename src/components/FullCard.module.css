@@ -17,6 +17,9 @@
   padding: 1rem;
 }
 
+.card__body {
+  word-break: break-all;
+}
 .main__card__buttons {
   display: flex;
 

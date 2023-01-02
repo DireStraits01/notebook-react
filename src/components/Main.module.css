@@ -22,7 +22,6 @@
   border: none;
   box-shadow: rgba(0, 0, 0, 0.02) 0px 2px 5px 0px,
     rgb(231, 223, 223) 0px 1px 1px 0px;
-  /* background-image: linear-gradient(to right, aliceblue, rgb(219, 226, 232)); */
   background-image: linear-gradient(to right, #545454, #181214);
   margin-left: 30%;
   transition: 0.2s all;
