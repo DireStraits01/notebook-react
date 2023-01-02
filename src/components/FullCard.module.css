@@ -14,8 +14,8 @@
   transform: translate(-50%, -50%);
   color: #00438b;
   padding: 2rem;
-  margin: 0;
   padding: 1rem;
+  margin-top: 2rem;
 }
 
 .main__card__buttons {
@@ -70,7 +70,7 @@
 
 @media screen and (max-width: 800px) {
   .main__card {
-    width: 85%;
+    width: 75%;
   }
   .main__card__btnBack,
   .main__card__btnEdit,
